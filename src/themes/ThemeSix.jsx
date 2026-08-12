@@ -235,7 +235,7 @@ export default function ThemeSix() {
             muted
             playsInline
             poster="/poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
           >
             <source src="/muj-campus.mp4" type="video/mp4" />
           </video>
