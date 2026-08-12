@@ -169,9 +169,10 @@ export default function ThemeSix() {
             loop
             muted
             playsInline
-            className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-100"
+            poster="/poster.png"
+            className="absolute inset-0 w-full h-full object-cover"
           >
-            {/* The user can swap this out with their actual manipal university drone video */}
+            <source src="/muj-campus.mp4" type="video/mp4" />
             <source src="/muj-campus.mov" type="video/quicktime" />
           </video>
 
