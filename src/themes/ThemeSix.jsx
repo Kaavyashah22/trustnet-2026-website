@@ -109,11 +109,11 @@ export default function ThemeSix() {
 
       if (e.code === 'Space' || e.code === 'ArrowRight' || e.code === 'ArrowDown') {
         e.preventDefault();
-        
+
         const headerOffset = 100;
         let currentIdx = 0;
         let minDiff = Infinity;
-        
+
         sections.forEach((id, idx) => {
           const el = document.getElementById(id);
           if (el) {
@@ -124,18 +124,18 @@ export default function ThemeSix() {
             }
           }
         });
-        
+
         const nextIdx = Math.min(currentIdx + 1, sections.length - 1);
-        handleScroll({ preventDefault: () => {} }, sections[nextIdx]);
+        handleScroll({ preventDefault: () => { } }, sections[nextIdx]);
       }
-      
+
       if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {
         e.preventDefault();
-        
+
         const headerOffset = 100;
         let currentIdx = 0;
         let minDiff = Infinity;
-        
+
         sections.forEach((id, idx) => {
           const el = document.getElementById(id);
           if (el) {
@@ -146,9 +146,9 @@ export default function ThemeSix() {
             }
           }
         });
-        
+
         const prevIdx = Math.max(currentIdx - 1, 0);
-        handleScroll({ preventDefault: () => {} }, sections[prevIdx]);
+        handleScroll({ preventDefault: () => { } }, sections[prevIdx]);
       }
     };
 
@@ -195,32 +195,32 @@ export default function ThemeSix() {
             </button>
           </div>
         </div>
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-white border-b border-slate-200 overflow-hidden shadow-2xl absolute top-full left-0 w-full z-40"
-          >
-            <nav className="flex flex-col px-6 py-6 gap-6">
-              {['Home', 'Call for Papers', 'Speakers', 'Committee', 'Special Sessions'].map((item) => {
-                const targetId = item.toLowerCase().replace(/\s+/g, '-');
-                return (
-                  <a key={item} href={`#${targetId}`} onClick={(e) => { handleScroll(e, targetId); setIsMobileMenuOpen(false); }} className="text-[14px] font-bold text-[#1A4F8A] uppercase tracking-wide">
-                    {item}
-                  </a>
-                );
-              })}
-              <div className="h-px bg-slate-200 w-full my-1"></div>
-              <button className="bg-[#700a26] text-white px-5 py-3 rounded-lg font-bold uppercase tracking-wide text-[14px] text-center shadow-md">
-                Register
-              </button>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="xl:hidden bg-white border-b border-slate-200 overflow-hidden shadow-2xl absolute top-full left-0 w-full z-40"
+            >
+              <nav className="flex flex-col px-6 py-6 gap-6">
+                {['Home', 'Call for Papers', 'Speakers', 'Committee', 'Special Sessions'].map((item) => {
+                  const targetId = item.toLowerCase().replace(/\s+/g, '-');
+                  return (
+                    <a key={item} href={`#${targetId}`} onClick={(e) => { handleScroll(e, targetId); setIsMobileMenuOpen(false); }} className="text-[14px] font-bold text-[#1A4F8A] uppercase tracking-wide">
+                      {item}
+                    </a>
+                  );
+                })}
+                <div className="h-px bg-slate-200 w-full my-1"></div>
+                <button className="bg-[#700a26] text-white px-5 py-3 rounded-lg font-bold uppercase tracking-wide text-[14px] text-center shadow-md">
+                  Register
+                </button>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Hero Section */}
@@ -235,7 +235,7 @@ export default function ThemeSix() {
             muted
             playsInline
             poster="/poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover scale-[1.25] translate-x-[10%]"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.35] translate-x-[12%]"
           >
             <source src="/muj-campus.mp4" type="video/mp4" />
           </video>
