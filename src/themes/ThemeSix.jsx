@@ -286,22 +286,22 @@ export default function ThemeSix() {
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="w-full lg:w-[420px] shrink-0 flex flex-col gap-4 lg:-mr-6 xl:-mr-8">
 
             {/* Red Frosted Glass Details Block */}
-            <div className="bg-[#700a26]/80 shadow-2xl p-5 sm:p-7 relative overflow-hidden backdrop-blur-md border border-white/20 rounded-xl">
+            <div className="bg-[#700a26]/80 shadow-2xl px-7 py-5 relative overflow-hidden backdrop-blur-md border border-white/20 rounded-xl">
               <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 text-blue-100 text-[10px] font-bold uppercase tracking-widest mb-3 border border-white/20">
                 Details
               </div>
 
-              <div className="text-xl sm:text-2xl font-bold text-white mb-0 leading-snug">
+              <div className="text-2xl font-bold text-white mb-0 leading-snug">
                 16-17 February, 2026
               </div>
               <div className="text-sm text-blue-200 mb-3 font-medium">
                 09:00 AM – 05:00 PM IST
               </div>
 
-              <div className="text-base sm:text-lg font-bold text-white leading-snug">
+              <div className="text-lg font-bold text-white leading-snug">
                 Manipal University Jaipur,
               </div>
-              <div className="text-sm text-blue-200 font-medium mb-4">
+              <div className="text-sm text-blue-200 font-medium mb-3">
                 Rajasthan, India | Hybrid Format
               </div>
 
@@ -317,9 +317,9 @@ export default function ThemeSix() {
                     { label: 'Mins', value: timeLeft.minutes },
                     { label: 'Secs', value: timeLeft.seconds },
                   ].map((unit, idx) => (
-                    <div key={idx} className="bg-white/5 py-3 text-center border border-white/10 rounded-lg">
-                      <div className="text-2xl sm:text-3xl font-black text-white font-mono leading-none">{String(unit.value).padStart(2, '0')}</div>
-                      <div className="text-[9px] sm:text-[10px] text-blue-300 font-bold uppercase tracking-wider mt-1">{unit.label}</div>
+                    <div key={idx} className="bg-white/5 py-2.5 text-center border border-white/10 rounded-lg">
+                      <div className="text-lg font-black text-white font-mono leading-none">{String(unit.value).padStart(2, '0')}</div>
+                      <div className="text-[8px] text-blue-300 font-bold uppercase tracking-wider mt-1">{unit.label}</div>
                     </div>
                   ))}
                 </div>
@@ -327,20 +327,20 @@ export default function ThemeSix() {
             </div>
 
             {/* Important Dates Block Below Details */}
-            <div className="bg-white/5 backdrop-blur-md shadow-2xl p-5 sm:p-6 relative overflow-hidden border border-white/10 rounded-xl">
+            <div className="bg-white/5 backdrop-blur-md shadow-2xl p-6 relative overflow-hidden border border-white/10 rounded-xl">
               <div className="text-blue-100 text-xs font-bold uppercase tracking-widest mb-4 flex items-center gap-2">
                 <Calendar size={16} /> Important Dates
               </div>
-              <div className="space-y-3.5">
+              <div className="space-y-3">
                 {[
                   { title: 'Call for Paper', date: 'Sep 9, 2025' },
                   { title: 'Submission End', date: 'Dec 30, 2025' },
                   { title: 'Acceptance', date: 'Jan 10, 2026' },
                   { title: 'Registration End', date: 'Jan 14, 2026' }
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-3.5 last:border-0 last:pb-0">
-                    <div className="text-sm sm:text-base text-blue-200 font-medium">{item.title}</div>
-                    <div className="text-white font-bold text-sm sm:text-base">{item.date}</div>
+                  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-3 last:border-0 last:pb-0">
+                    <div className="text-sm text-blue-200 font-medium">{item.title}</div>
+                    <div className="text-white font-bold text-base">{item.date}</div>
                   </div>
                 ))}
               </div>
