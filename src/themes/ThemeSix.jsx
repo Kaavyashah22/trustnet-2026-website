@@ -130,8 +130,6 @@ export default function ThemeSix() {
             </button>
           </div>
         </div>
-      </header>
-
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -139,7 +137,7 @@ export default function ThemeSix() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-white border-b border-slate-200 overflow-hidden shadow-md absolute w-full z-40"
+            className="xl:hidden bg-white border-b border-slate-200 overflow-hidden shadow-2xl absolute top-full left-0 w-full z-40"
           >
             <nav className="flex flex-col px-6 py-6 gap-6">
               {['Home', 'Call for Papers', 'Speakers', 'Committee', 'Special Sessions'].map((item) => {
@@ -158,6 +156,7 @@ export default function ThemeSix() {
           </motion.div>
         )}
       </AnimatePresence>
+      </header>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[85vh] flex flex-col justify-center pt-4 pb-8 bg-slate-900">
