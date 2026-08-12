@@ -219,16 +219,23 @@ export default function ThemeSix() {
 
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/muj-campus.mp4" type="video/mp4" />
-          </video>
+          <div
+            className="absolute inset-0 w-full h-full"
+            dangerouslySetInnerHTML={{
+              __html: `
+                <video
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  poster="/poster.jpg"
+                  class="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src="/muj-campus.mp4" type="video/mp4" />
+                </video>
+              `
+            }}
+          />
 
           {/* Tech Mahindra style large geometric web pattern */}
           <div className="absolute inset-0 opacity-[0.18] pointer-events-none" style={{
