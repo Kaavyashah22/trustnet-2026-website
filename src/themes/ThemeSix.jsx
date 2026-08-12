@@ -91,6 +91,62 @@ export default function ThemeSix() {
     return () => clearInterval(interval);
   }, []);
 
+  // Presentation Mode Keyboard Navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+
+      const sections = ['home', 'call-for-papers', 'speakers', 'schedule'];
+
+      if (e.code === 'Space' || e.code === 'ArrowRight' || e.code === 'ArrowDown') {
+        e.preventDefault();
+        
+        const headerOffset = 100;
+        let currentIdx = 0;
+        let minDiff = Infinity;
+        
+        sections.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (el) {
+            const diff = Math.abs(el.getBoundingClientRect().top - headerOffset);
+            if (diff < minDiff) {
+              minDiff = diff;
+              currentIdx = idx;
+            }
+          }
+        });
+        
+        const nextIdx = Math.min(currentIdx + 1, sections.length - 1);
+        handleScroll({ preventDefault: () => {} }, sections[nextIdx]);
+      }
+      
+      if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {
+        e.preventDefault();
+        
+        const headerOffset = 100;
+        let currentIdx = 0;
+        let minDiff = Infinity;
+        
+        sections.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (el) {
+            const diff = Math.abs(el.getBoundingClientRect().top - headerOffset);
+            if (diff < minDiff) {
+              minDiff = diff;
+              currentIdx = idx;
+            }
+          }
+        });
+        
+        const prevIdx = Math.max(currentIdx - 1, 0);
+        handleScroll({ preventDefault: () => {} }, sections[prevIdx]);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FFFDFB] text-slate-900 font-sans selection:bg-[#700a26] selection:text-white overflow-x-hidden">
 
@@ -159,7 +215,7 @@ export default function ThemeSix() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[85vh] flex flex-col justify-center pt-4 pb-8 bg-slate-900">
+      <section id="home" className="relative overflow-hidden min-h-[85vh] flex flex-col justify-center pt-4 pb-8 bg-slate-900">
 
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
