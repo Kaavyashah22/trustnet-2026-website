@@ -169,11 +169,10 @@ export default function ThemeSix() {
             loop
             muted
             playsInline
-            poster="/poster.png"
+            poster="/poster.jpg"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/muj-campus.mp4" type="video/mp4" />
-            <source src="/muj-campus.mov" type="video/quicktime" />
           </video>
 
           {/* Tech Mahindra style large geometric web pattern */}
