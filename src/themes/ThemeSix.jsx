@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -51,6 +51,15 @@ export default function ThemeSix() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDay, setActiveDay] = useState('day1');
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(e => console.log("Autoplay prevented:", e));
+    }
+  }, []);
 
   const handleScroll = (e, targetId) => {
     e.preventDefault();
@@ -219,23 +228,17 @@ export default function ThemeSix() {
 
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
-          <div
-            className="absolute inset-0 w-full h-full"
-            dangerouslySetInnerHTML={{
-              __html: `
-                <video
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  poster="/poster.jpg"
-                  class="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src="/muj-campus.mp4" type="video/mp4" />
-                </video>
-              `
-            }}
-          />
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/poster.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/muj-campus.mp4" type="video/mp4" />
+          </video>
 
           {/* Tech Mahindra style large geometric web pattern */}
           <div className="absolute inset-0 opacity-[0.18] pointer-events-none" style={{
