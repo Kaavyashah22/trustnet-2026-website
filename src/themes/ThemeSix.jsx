@@ -75,7 +75,7 @@ export default function ThemeSix() {
   };
 
   useEffect(() => {
-    const targetDate = new Date('December 30, 2025 23:59:59').getTime();
+    const targetDate = new Date('August 15, 2026 09:00:00').getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -292,7 +292,7 @@ export default function ThemeSix() {
               </div>
 
               <div className="text-2xl font-bold text-white mb-0 leading-snug">
-                16-17 February, 2026
+                15-16 August, 2026
               </div>
               <div className="text-sm text-blue-200 mb-3 font-medium">
                 09:00 AM – 05:00 PM IST
