@@ -224,7 +224,7 @@ export default function ThemeSix() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden min-h-[85vh] flex flex-col justify-center pt-4 pb-8 bg-slate-900">
+      <section id="home" className="relative overflow-hidden min-h-[calc(100dvh-80px)] flex flex-col justify-center pt-4 pb-8 bg-slate-900">
 
         {/* Background Video */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
