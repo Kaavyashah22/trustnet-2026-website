@@ -504,13 +504,13 @@ export default function ThemeSix() {
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Visitor Counter</h4>
-              <div className="bg-slate-900/40 border border-white/10 rounded-xl p-4 flex items-center gap-4 shadow-xl w-fit backdrop-blur-md">
-                <div className="bg-[#700a26] p-2.5 rounded-lg shadow-inner">
-                  <Users size={20} className="text-white" />
+              <div className="bg-slate-900/40 border border-white/10 rounded-xl p-3 flex items-center gap-3 shadow-xl w-fit backdrop-blur-md">
+                <div className="bg-[#700a26] p-2 rounded-lg shadow-inner">
+                  <Users size={7} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-blue-200 font-bold uppercase tracking-widest mb-0.5">Total Visitors</div>
-                  <div className="text-2xl font-black text-white font-mono leading-none tracking-tight">
+                  <div className="text-[9px] text-blue-200 font-bold uppercase tracking-widest mb-0.5">Total Visitors</div>
+                  <div className="text-xl font-black text-white font-mono leading-none tracking-tight">
                     {pageviews.toLocaleString()}
                   </div>
                 </div>
