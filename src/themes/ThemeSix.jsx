@@ -165,10 +165,10 @@ export default function ThemeSix() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFFDFB] text-slate-900 font-sans selection:bg-[#700a26] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#FFFDFB] text-slate-900 font-sans selection:bg-[#700a26] selection:text-white">
 
       {/* Legacy Header Redefined */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-[1350px] mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-8">
           <div className="flex items-center gap-3 shrink-0 xl:-ml-4">
             <img src="/muj-logo.png" alt="MUJ Logo" className="h-12 w-auto object-contain" />
