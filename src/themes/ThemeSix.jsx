@@ -51,7 +51,7 @@ export default function ThemeSix() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDay, setActiveDay] = useState('day1');
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
-  const [pageviews, setPageviews] = useState(19042);
+  const [pageviews, setPageviews] = useState(63);
   const videoRef = useRef(null);
 
   // Live visitor simulation
