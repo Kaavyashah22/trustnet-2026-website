@@ -179,7 +179,7 @@ export default function ThemeSix() {
           </div>
 
           <nav className="hidden xl:flex gap-3 items-center">
-            {['Home', 'Call for Papers', 'Speakers', 'Committee', 'Special Sessions'].map((item) => {
+            {['Home', 'Call for Papers', 'Tracks', 'Speakers', 'Schedule'].map((item) => {
               const targetId = item.toLowerCase().replace(/\s+/g, '-');
               return (
                 <a key={item} href={`#${targetId}`} onClick={(e) => handleScroll(e, targetId)} className="text-[12px] font-bold text-slate-600 hover:text-[#700a26] uppercase tracking-wide transition-colors whitespace-nowrap">
@@ -213,7 +213,7 @@ export default function ThemeSix() {
               className="xl:hidden bg-white border-b border-slate-200 overflow-hidden shadow-2xl absolute top-full left-0 w-full z-40"
             >
               <nav className="flex flex-col px-6 py-6 gap-6">
-                {['Home', 'Call for Papers', 'Speakers', 'Committee', 'Special Sessions'].map((item) => {
+                {['Home', 'Call for Papers', 'Tracks', 'Speakers', 'Schedule'].map((item) => {
                   const targetId = item.toLowerCase().replace(/\s+/g, '-');
                   return (
                     <a key={item} href={`#${targetId}`} onClick={(e) => { handleScroll(e, targetId); setIsMobileMenuOpen(false); }} className="text-[14px] font-bold text-[#1A4F8A] uppercase tracking-wide">
