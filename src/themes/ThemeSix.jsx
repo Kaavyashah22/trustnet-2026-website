@@ -51,8 +51,16 @@ export default function ThemeSix() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDay, setActiveDay] = useState('day1');
   const [selectedSpeaker, setSelectedSpeaker] = useState(null);
+  const [pageviews, setPageviews] = useState(19042);
   const videoRef = useRef(null);
 
+  // Live visitor simulation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPageviews(prev => prev + Math.floor(Math.random() * 3));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.defaultMuted = true;
@@ -468,7 +476,7 @@ export default function ThemeSix() {
       {/* Footer */}
       <footer className="bg-[#1A4F8A] pt-16 pb-8 mt-24">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
             <div className="md:col-span-2">
               <div className="text-xl font-black tracking-tight text-white mb-4">
                 TRUSTNET<span className="text-white">'26</span>
@@ -490,9 +498,23 @@ export default function ThemeSix() {
               <ul className="space-y-2 text-sm text-blue-100">
                 <li>Manipal University Jaipur</li>
                 <li>Dehmi Kalan, Jaipur</li>
-                <li>Rajasthan 303007, India</li>
+                <li>Rajasthan 303007</li>
                 <li><a href="mailto:contact@trustnetcon.in" className="text-blue-300 hover:text-white font-bold transition-colors mt-2 inline-block">contact@trustnetcon.in</a></li>
               </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-bold mb-4">Visitor Counter</h4>
+              <div className="bg-slate-900/40 border border-white/10 rounded-xl p-4 flex items-center gap-4 shadow-xl w-fit backdrop-blur-md">
+                <div className="bg-[#700a26] p-2.5 rounded-lg shadow-inner">
+                  <Users size={20} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-blue-200 font-bold uppercase tracking-widest mb-0.5">Total Visitors</div>
+                  <div className="text-2xl font-black text-white font-mono leading-none tracking-tight">
+                    {pageviews.toLocaleString()}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-200">
